@@ -138,6 +138,7 @@ $result = mysqli_query($db, $query);
 
 
     </style>
+    
 </head>
 <body>
     <div class="bannerpoltek">
@@ -205,7 +206,8 @@ $result = mysqli_query($db, $query);
                 while ($row = mysqli_fetch_assoc($result)){
                     $dataid = $row['id'];
 
-                    $myurl = 'ubahdata.php?datanya='.$dataid;
+                    $ubahdata = 'ubahdata.php?datanya='.$dataid;
+                    $deletedata = 'deletedata.php?datanya='.$dataid;
 
             ?>
             <td><?php echo $row['id'];   ?></td>
@@ -213,8 +215,9 @@ $result = mysqli_query($db, $query);
             <td><?php echo $row['nomor_hp'];   ?></td>
             <td><?php echo $row['tanggal_perjalanan'];   ?></td>
             <td><?php echo $row['jumlah_orang'];   ?></td>
-            <td><a href="<?php echo $myurl?>" class="btn btn-primary">edit</a></td>
-            <td><a href="<?php echo $myurl?>" class="btn btn-danger">delete</a></td>
+            <td><a href="<?php echo $ubahdata?>" class="btn btn-primary">edit</a></td>
+            <td><a href="<?php echo $deletedata?>" class="btn btn-danger">delete</a></td>
+            <!-- <td><button class="btn btn-danger" id="btn-del" >delete</button></td> -->
 
         </tr>
             <?php
@@ -228,6 +231,20 @@ $result = mysqli_query($db, $query);
 
 
     </table>
+    <!-- <script>
+       document.getElementById("btn-del").addEventListener("click", myFunction);
+
+       function myFunction() {
+        // alert("Hello! I am an alert box!");
+        var txt;
+        if (confirm("Press a button!")) {
+            // alert("Hello! I am an alert box!");
+            location.replace('<?php echo $myurl?>');
+        } else {
+            alert("Hello! I am an alert box! too");
+        }
+    }
+    </script> -->
 </div>
     
 </body>
