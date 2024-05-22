@@ -13,7 +13,7 @@ $totalorang = $_POST['jumlah_orang'];
 // echo $tanggal_perjalanan;
 // echo $totalorang;
 
-$sql = "INSERT INTO data_user (nama, nomor_hp, tanggal_perjalanan, jumlah_orang) VALUE ('$nama', '$nomor', '$tanggal_perjalanan', '$jumlah_orang')";
+$sql = "INSERT INTO data_user (nama, nomor_hp, tanggal_perjalanan, jumlah_orang) VALUE ('$nama', '$nomor', '$tanggal_perjalanan', '$totalorang')";
 $query = mysqli_query($db, $sql);
 
 if( $query ) {
