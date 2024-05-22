@@ -187,6 +187,8 @@ $result = mysqli_query($db, $query);
           </div>
         </div>
       </nav>
+
+      
 <div class="card-body">
     <table class="table table-bordered">
         <tr class="bg-primary">
