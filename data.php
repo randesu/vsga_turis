@@ -1,3 +1,12 @@
+<?php
+include("koneksi.php");
+$query = "select * from data_user";
+$result = mysqli_query($db, $query);
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -179,13 +188,44 @@
       </nav>
 <div class="card-body">
     <table class="table table-bordered">
-        <tr>
+        <tr class="bg-primary">
+            <td> id</td>
             <td> Nama</td>
             <td> Nomor HP</td>
             <td> Tanggal Wisata</td>
             <td> Jumlah Orang</td>
+            <td colspan="2">Action</td>
+            <!-- <td> edit</td>
+            <td> delete</td> -->
             
         </tr>
+
+        <tr>
+            <?php
+                while ($row = mysqli_fetch_assoc($result)){
+                    $dataid = $row['id'];
+
+                    $myurl = 'ubahdata.php?datanya='.$dataid;
+
+            ?>
+            <td><?php echo $row['id'];   ?></td>
+            <td><?php echo $row['nama'];   ?></td>
+            <td><?php echo $row['nomor_hp'];   ?></td>
+            <td><?php echo $row['tanggal_perjalanan'];   ?></td>
+            <td><?php echo $row['jumlah_orang'];   ?></td>
+            <td><a href="<?php echo $myurl?>" class="btn btn-primary">edit</a></td>
+            <td><a href="<?php echo $myurl?>" class="btn btn-danger">delete</a></td>
+
+        </tr>
+            <?php
+                }
+
+            
+
+            ?>
+            
+        
+
 
     </table>
 </div>
