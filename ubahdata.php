@@ -4,7 +4,8 @@ $aku =  $_GET['datanya'] ;
 $query = "select * from data_user where id=$aku";
 $result = mysqli_query($db, $query);
 $mydata = mysqli_fetch_assoc($result);
-$deletedataok = 'deleteok.php?datanya='.$aku;
+$ubahdataok = 'ubahdataok.php?datanya='.$aku;
+
 ?>
 
 <!DOCTYPE html>
@@ -187,9 +188,11 @@ $deletedataok = 'deleteok.php?datanya='.$aku;
         </div>
       </nav>
 
-        <form action="#" method="POST" style="margin-left: 10px;">
+        <form action="<?php echo $ubahdataok?>" method="POST" style="margin-left: 10px;margin-top:10px;">
             <label for="nama_pemesan">Nama Awal :<?php echo $mydata['nama'];?></label> <br>
             <input type="text" placeholder="nama diubah ke" id="nama_pemesan" name="nama_pemesan"> <br> <br>
+
+            <!-- <input type="hidden" placeholder="nama diubah ke" id="id_user" name="id_user"> <?php $aku?> <br> <br> -->
 
             <label for="nomor_hp">Nomor hp sebelumnya <?php echo $mydata['nomor_hp'];?></label> <br>
             <input type="number" placeholder="nomor hp diubah ke" id="nomor_hp" name="nomor_hp">  <br> <br>
