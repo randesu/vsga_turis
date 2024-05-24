@@ -15,7 +15,7 @@ $result = mysqli_query($db, $query);
 
 if( $result ) {
     // kalau berhasil alihkan ke halaman index.php dengan status=sukses
-    // echo alert("Data Berhasil dihapus");
+    // echo 'alert("Data Berhasil dihapus")';
     // echo '<script>alert("Welcome to Geeks for Geeks")</script>';
     header('Location: data.php?status=sukses');
 } else {
